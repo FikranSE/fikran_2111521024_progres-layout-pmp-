@@ -49,33 +49,45 @@ class WelcomeScreen extends StatelessWidget {
           Card(
             margin: EdgeInsets.symmetric(horizontal: 20),
             color: Color(0xFF49454F),
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Pembangunan Aplikasi gojek berbasis web',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Pembangunan Aplikasi gojek berbasis web',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Dosen Pembimbing : Husnil Kamil\nTanggal Pendaftaran : 18 Mei 2025',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Deskripsi singkat...',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
+                ),
+                Container(
+                  width: double
+                      .infinity, // Ensures the container takes up full width
+                  color: Color.fromARGB(255, 199, 198, 198),
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      IconButton(
-                        // Mengganti TextButton menjadi IconButton
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                        ),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -84,16 +96,17 @@ class WelcomeScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        icon: Icon(
-                          // Menetapkan ikon untuk IconButton
-                          Icons.info, // Contoh: Menggunakan ikon info
-                          color: Colors.blue, // Memberikan warna ikon
+                        child: Text(
+                          'Detail',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],
@@ -107,7 +120,6 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               Expanded(
                 child: IconButton(
-                  // Mengganti TextButton menjadi IconButton
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -117,15 +129,13 @@ class WelcomeScreen extends StatelessWidget {
                     );
                   },
                   icon: Icon(
-                    // Menetapkan ikon untuk IconButton
-                    Icons.note_add, // Contoh: Menggunakan ikon tambah
-                    color: Colors.white, // Memberikan warna ikon
+                    Icons.note_add,
+                    color: Colors.white,
                   ),
                 ),
               ),
               Expanded(
                 child: IconButton(
-                  // Mengganti TextButton menjadi IconButton
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -135,22 +145,19 @@ class WelcomeScreen extends StatelessWidget {
                     );
                   },
                   icon: Icon(
-                    // Menetapkan ikon untuk IconButton
-                    Icons.mail, // Contoh: Menggunakan ikon surat
-                    color: Colors.white, // Memberikan warna ikon
+                    Icons.mail,
+                    color: Colors.white,
                   ),
                 ),
               ),
               Expanded(
                 child: IconButton(
-                  // Mengganti TextButton menjadi IconButton
                   onPressed: () {
                     // Tindakan ketika tombol List TA ditekan
                   },
                   icon: Icon(
-                    // Menetapkan ikon untuk IconButton
-                    Icons.list, // Contoh: Menggunakan ikon daftar/list
-                    color: Colors.white, // Memberikan warna ikon
+                    Icons.list,
+                    color: Colors.white,
                   ),
                 ),
               ),
